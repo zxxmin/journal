@@ -9,7 +9,7 @@
     margin: 0 auto;
 
     > section.mainCont {
-        flex: 1;
+        width: calc(100% - 26.4rem);
     }
 }
 
@@ -100,10 +100,6 @@ section.tasks {
         margin-top: auto;
         > div {
             flex: 1;
-            
-            button {
-                width: 100%;
-            }
         }
     }
 }

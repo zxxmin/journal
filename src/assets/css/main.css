@@ -2,8 +2,7 @@
 /*abstracts*/
 /*base*/
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body, nav, section, article, figure, figcaption,
@@ -40,8 +39,7 @@ body {
 body *::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 body *::-webkit-scrollbar-thumb {
   background-color: rgba(26, 26, 26, 0.1);
@@ -127,13 +125,9 @@ fieldset legend {
 
 /*component*/
 i[class*=ico-] {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: middle;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 2rem;
   height: 2rem;
   background-repeat: no-repeat;
@@ -176,18 +170,13 @@ i[class*=ico-].ico-desc {
 
 button.btn, a.btn, a.btn:link, a.btn:visited {
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0.8rem;
-  height: 4.8rem;
+  width: 100%;
+  height: 4rem;
   text-decoration: none;
   color: #444444;
   border-radius: 0.8rem;
@@ -195,7 +184,6 @@ button.btn, a.btn, a.btn:link, a.btn:visited {
   border-style: solid;
   line-height: 1;
   border-color: #444444;
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 button.btn:hover, a.btn:hover, a.btn:link:hover, a.btn:visited:hover {
@@ -227,12 +215,8 @@ button.btn[class*=ico-], a.btn[class*=ico-], a.btn:link[class*=ico-], a.btn:visi
 }
 button.btn[class*=ico-]::before, a.btn[class*=ico-]::before, a.btn:link[class*=ico-]::before, a.btn:visited[class*=ico-]::before {
   content: "";
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 2rem;
   height: 2rem;
   background-position: center;
@@ -372,15 +356,10 @@ input[type=radio] + label {
   font-size: 1.6rem;
   font-weight: 400;
   color: #444444;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: display 0.2s;
   transition: display 0.2s;
   position: relative;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   gap: 0.8rem;
   cursor: pointer;
 }
@@ -388,14 +367,10 @@ input[type=checkbox] + label::before, input[type=checkbox] + label::after,
 input[type=radio] + label::before,
 input[type=radio] + label::after {
   content: "";
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   width: 1.2rem;
   height: 1.2rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: display 0.2s;
+  box-sizing: border-box;
   transition: display 0.2s;
   border: 0.1rem solid #444444;
 }
@@ -420,12 +395,8 @@ input[type=checkbox]:checked + label::after {
 .tit-area,
 .fnc-area,
 .flex-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   gap: 0.8rem;
   margin-bottom: 0.8rem;
 }
@@ -435,14 +406,9 @@ input[type=checkbox]:checked + label::after {
 .tit-area .r-area,
 .fnc-area .r-area,
 .flex-area .r-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.8rem 0.8rem;
 }
 .tit-area .l-area > *,
@@ -459,39 +425,32 @@ input[type=checkbox]:checked + label::after {
 .tit-area .r-area:only-child,
 .fnc-area .r-area:only-child,
 .flex-area .r-area:only-child {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .tit-area .r-area,
 .fnc-area .r-area,
 .flex-area .r-area {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 .center.tit-area,
 .center.fnc-area,
 .center.flex-area {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 .vcenter.tit-area,
 .vcenter.fnc-area,
 .vcenter.flex-area {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 .tit-area .dir-col,
 .fnc-area .dir-col,
 .flex-area .dir-col {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  align-items: flex-start;
 }
 
+table {
+  width: 100%;
+}
 table caption {
   position: absolute;
   width: 0.1rem;
@@ -504,35 +463,22 @@ table caption {
 
 /*layout*/
 .CONTENT {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   gap: 2.4rem;
   max-width: 90rem;
   height: 100vh;
-  -webkit-box-shadow: 0.05rem 0.05rem 1rem rgba(26, 26, 26, 0.1);
-          box-shadow: 0.05rem 0.05rem 1rem rgba(26, 26, 26, 0.1);
+  box-shadow: 0.05rem 0.05rem 1rem rgba(26, 26, 26, 0.1);
   padding: 2.4rem;
   margin: 0 auto;
 }
 .CONTENT > section.mainCont {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  width: calc(100% - 26.4rem);
 }
 
 section.tasks {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 1.6rem;
   width: 24rem;
   height: 100%;
@@ -559,13 +505,8 @@ section.tasks > ul li.current {
   font-weight: 700;
 }
 section.tasks > ul li.year > input[type=checkbox] + label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   padding: 0.8rem;
 }
 section.tasks > ul li.year > input[type=checkbox] + label:hover {
@@ -581,8 +522,6 @@ section.tasks > ul li.year > input[type=checkbox]:checked ~ ul {
   display: block;
 }
 section.tasks > ul li a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 0.8rem;
   padding: 0.8rem;
@@ -594,40 +533,23 @@ section.tasks > ul li > ul li:not(.month) a {
   padding-left: 5.6rem;
 }
 section.tasks div.btnWrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   gap: 0.8rem;
   margin-top: auto;
 }
 section.tasks div.btnWrap > div {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-section.tasks div.btnWrap > div button {
-  width: 100%;
+  flex: 1;
 }
 
 section.mainCont {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 2.4rem;
   padding: 2.4rem 0;
 }
 section.mainCont article {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   height: 50%;
 }
 section.mainCont article > h1 {
@@ -638,19 +560,12 @@ section.mainCont article > h1 {
 }
 
 article.objective > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   height: calc(100% - 4.6rem);
 }
 article.objective > div > div {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   padding: 0 0.8rem;
   height: 100%;
 }
@@ -680,14 +595,61 @@ article.objective > div > div > ul textarea {
   border-bottom: 0.1rem solid #444444;
   outline: none;
   padding: 0.8rem 0;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 
-article.habit table td.habitNm {
+article.habit table tr {
+  display: flex;
+  flex-direction: row;
+}
+article.habit table tr td {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #444444;
+}
+article.habit table tr td.habitNm {
+  width: 30px;
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
   overflow: hidden;
-}/*# sourceMappingURL=main.css.map */
+}
+article.habit table tr td:not(.habitNm) {
+  width: calc((100% - 30px) / 31);
+  text-align: center;
+}
+article.habit table input[type=checkbox] + label::before, article.habit table input[type=checkbox] + label::after {
+  border-radius: 50%;
+}
+article.habit table input[type=checkbox]:checked + label::after {
+  background-color: #45AAF2;
+}
+
+article.todo div.progressWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+}
+article.todo div.progressWrap div.progressOuter {
+  width: 54rem;
+  border: 1px solid #444444;
+  border-radius: 2.4rem;
+  padding: 0.35rem;
+}
+article.todo div.progressWrap div.progressOuter div.progressInner {
+  height: 100%;
+  border: 1px solid #444444;
+  border-radius: 2.4rem;
+  overflow: hidden;
+}
+article.todo div.progressWrap div.progressOuter div.progressInner span.progress {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #45AAF2;
+}
+article.todo div.tit-area div.r-area {
+  width: 18rem;
+  justify-content: flex-start;
+}

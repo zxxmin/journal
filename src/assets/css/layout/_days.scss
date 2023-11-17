@@ -1,0 +1,36 @@
+article.todo {
+    div.progressWrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: $gap;
+
+        div.progressOuter {
+            width: 54rem;
+            border: 1px solid $grayColor3;
+            border-radius: $radiusLg;
+            padding: .35rem;
+            
+            div.progressInner {
+                height: 100%;
+                border: 1px solid $grayColor3;
+                border-radius: $radiusLg;
+                overflow: hidden;
+
+                span.progress {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $blueColor;
+                }
+            }
+        }
+    }
+
+    div.tit-area {
+        div.r-area {
+            width: 18rem;
+            justify-content: flex-start;
+        }
+    }
+}

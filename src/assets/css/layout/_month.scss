@@ -62,11 +62,39 @@ article.objective {
 
 article.habit {
     table {
-        td.habitNm {
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            word-wrap: normal;
-            overflow: hidden;
+        tr {
+            display: flex;
+            flex-direction: row;
+            td {
+                @include type('PrS');
+                &.habitNm {
+                    // flex: 2;
+                    width: 30px;
+
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    word-wrap: normal;
+                    overflow: hidden;
+                }
+                &:not(.habitNm) {
+                    // flex: 1;
+                    width: calc((100% - 30px) / 31);
+                    text-align: center;
+                }
+            }
+        }
+
+        input[type=checkbox]+label {
+            &::before,
+            &::after {
+                border-radius: 50%;
+            }
+        }
+        
+        input[type=checkbox]:checked+label{
+            &::after {
+                background-color: $blueColor;
+            }
         }
     }
 }
