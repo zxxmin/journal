@@ -1,0 +1,75 @@
+button.btn, a.btn, a.btn:link, a.btn:visited {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: $gapSm;
+    height: 4.8rem;
+    text-decoration: none;
+    color: $grayColor3;
+    border-radius: $radius;
+    border-width: 0.1rem;
+    border-style: solid;
+    line-height: 1;
+    border-color: $grayColor3;
+    // background-color: $white;
+    transition: all 0.2s;
+    &:hover {
+        border-color: $black;
+        font-weight: 700;
+    }
+    &:disabled,&.disabled {
+        cursor: default;
+        color: $white;
+        background-color: $grayColor3;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    &.add {
+        background-color: $yellowColor;
+    }
+    
+    &.danger {
+        &:hover {
+            background-color: $redColor;
+            color: $white;
+        }
+    }
+
+    &.sm {
+        width: $iconM;
+        height: $iconM;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &[class*="ico-"] {
+        gap: $gapXsm;
+        &::before {
+            content: '';
+            display: inline-flex;
+            flex: 0 0 auto;
+            width: $iconM;
+            height: $iconM;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @each $cls, $icon in $icons {
+            &.#{$cls} {
+                &::before {
+                    background-image: url(pathIcon(map-get($icons,#{$cls}), $grayColor3));
+                }
+                &:hover::before {
+                    background-image: url(pathIcon(map-get($icons,#{$cls}), $black));
+                }
+                &:disabled::before {
+                    background-image: url(pathIcon(map-get($icons,#{$cls}), $white));
+                }
+            }
+        }
+    }
+}

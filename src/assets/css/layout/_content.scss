@@ -1,0 +1,109 @@
+.CONTENT {
+    display: flex;
+    flex-direction: row;
+    gap: $gapLg;
+    max-width: $fillSize;
+    height: 100vh;
+    box-shadow: 0.05rem 0.05rem 1rem rgba($black, 0.1);
+    padding: $gapLg;
+    margin: 0 auto;
+
+    > section.mainCont {
+        flex: 1;
+    }
+}
+
+section.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    width: 24rem;
+    height: 100%;
+    background-color: $grayColor1;
+    border-radius: $radiusLg;
+    padding: $gapLg;
+    
+    > h2 {
+        @include type('HdS');
+    }
+    
+    > ul {
+        max-height: calc(100% - 8.9rem);
+        overflow: auto;
+        li {
+            &.current,
+            a:hover {
+                background-color: $grayColor2;
+                border-radius: $radius;
+                font-weight: 700;
+            }
+            &.current {
+                font-weight: 700;
+            }
+
+            &.year {
+                > input[type=checkbox] {
+                    &+label {
+                        display: flex;
+                        flex-direction: row;
+                        padding: $gapSm;
+                        
+                        &:hover {
+                            font-weight: 700;
+                        }
+
+                        &::before,
+                        &::after {
+                            display: none;
+                        }
+                    }
+
+                    &~ul {
+                        display: none;
+                    }
+
+                    &:checked {
+                        &~ul {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            a {
+                display: flex;
+                gap: $gapSm;
+                padding: $gapSm;
+            }
+
+            > ul {
+                li {
+                    &.month {
+                        a {
+                            padding-left: 2.8rem;
+                        }
+                    }
+                    &:not(.month) {
+                        a {
+                            padding-left: 5.6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.btnWrap {
+        display: flex;
+        flex-direction: row;
+        gap: $gapSm;
+        margin-top: auto;
+        > div {
+            flex: 1;
+            
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

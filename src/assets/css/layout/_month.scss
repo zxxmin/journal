@@ -1,0 +1,72 @@
+section.mainCont {
+    display: flex;
+    flex-direction: column;
+    gap: $gapLg;
+    padding: $gapLg 0;
+    
+    article {
+        flex: 1;
+        height: 50%;
+        > h1 {
+            @include type('HdL');
+            margin-bottom: $gap;
+        }
+    }
+}
+
+article.objective {
+    > div {
+        display: flex;
+        flex-direction: row;
+        height: calc(100% - 4.6rem);
+        
+        > div {
+            flex: 1;
+            padding: 0 $gapSm;
+            height: 100%;
+
+            &.shot {
+                border-right: .1rem solid $grayColor3;
+            }
+
+            > div.tit-area {
+                padding: 0 $gapSm;
+            }
+
+            > ul {
+                height: calc(100% - 3.2rem);
+                overflow: auto;
+
+                > li {
+                    position: relative;
+                    &:not(:last-child) {
+                        margin-bottom: $gapSm;
+                    }
+                }
+                input[type=checkbox]+label {
+                    width: 100%;
+                }
+                input[type=text],
+                textarea {
+                    width: 100%;
+                    border: none;
+                    border-bottom: .1rem solid $grayColor3;
+                    outline: none;
+                    padding: .8rem 0;
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+
+article.habit {
+    table {
+        td.habitNm {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            overflow: hidden;
+        }
+    }
+}

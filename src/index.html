@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+    <div class="CONTENT">
+        <section class="tasks">
+            <h2>TASKS</h2>
+
+            <ul>
+                <li class="year">
+                    <input type="checkbox" id="2023">
+                    <label for="2023"><i class="ico-timeline"></i>2023</label>
+
+                    <ul>
+                        <li class="month current"><a href="#none"><i class="ico-plus"></i>11월</a></li>
+                        <li><a href="#none">1일</a></li>
+                        <li><a href="#none">2일</a></li>
+                        <li><a href="#none">3일</a></li>
+                        <li><a href="#none">4일</a></li>
+                        <li><a href="#none">5일</a></li>
+                    </ul>
+                </li>
+                <li class="year">
+                    <input type="checkbox" id="2024">
+                    <label for="2024"><i class="ico-timeline"></i>2024</label>
+                </li>
+                <li class="year">
+                    <input type="checkbox" id="2025">
+                    <label for="2025"><i class="ico-timeline"></i>2025</label>
+                </li>
+            </ul>
+
+            <div class="btnWrap">
+                <div class="l-area">
+                    <button class="btn add">add tasks</button>
+                </div>
+                <div class="r-area">
+                    <button class="btn danger">del tasks</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mainCont">
+            <article class="objective">
+                <h1><span>11월</span> 목표</h1>
+
+                <div>
+                    <div class="shot">
+                        <div class="tit-area">
+                            <div class="l-area">
+                                <h3>단기</h3>
+                            </div>
+                            <div class="r-area">
+                                <button class="btn sm">
+                                    <i class="ico-plus"></i>
+                                </button>
+                                <button class="btn sm">
+                                    <i class="ico-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="shotObj1">
+                                <label for="shotObj1">
+                                    <textarea rows="1" title="단기목표를 작성하세요."></textarea>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="shotObj2">
+                                <label for="shotObj2">
+                                    <textarea rows="1" title="단기목표를 작성하세요."></textarea>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="shotObj3">
+                                <label for="shotObj3">
+                                    <textarea rows="1" title="단기목표를 작성하세요."></textarea>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="long">
+                        <div class="tit-area">
+                            <div class="l-area">
+                                <h3>장기</h3>
+                            </div>
+                            <div class="r-area">
+                                <button class="btn sm">
+                                    <i class="ico-plus"></i>
+                                </button>
+                                <button class="btn sm">
+                                    <i class="ico-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="longObj1">
+                                <label for="longObj1">
+                                    <textarea rows="1" title="단기목표를 작성하세요."></textarea>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="longObj2">
+                                <label for="longObj2">
+                                    <textarea rows="1" title="단기목표를 작성하세요."></textarea>
+                                </label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="longObj3">
+                                <label for="longObj3">
+                                    <textarea rows="1" title="단기목표를 작성하세요."></textarea>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article class="habit">
+                <h1><span>Nov</span> Habit Tracker</h1>
+
+                <table>
+                    <caption>Habit trakcer 표</caption>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                            <td>29</td>
+                            <td>30</td>
+                            <td>31</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="habitNm">영양제</td>
+                            <td>
+                                <input type="radio" id="habit1-1">
+                                <label for="habit1-1"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="habitNm">영양제</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </article>
+        </section>
+
+    </div>
+</body>
+</html>

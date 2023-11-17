@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body, nav, section, article, figure, figcaption,
+h1, h2, h3, h4, h5, h6,
+menu, ul, ol, dl, li, dt, dd,
+p, form {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    @include type('PrL');
+    font-family: $fontFamily;
+    letter-spacing: -0.04em;
+    line-height: 1.25;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: auto;
+    * {
+        @include customScroll;
+    }
+}
+
+@media (any-pointer: coarse) {
+    body {
+        * {
+            scrollbar-width: 0;
+            &::-webkit-scrollbar {
+                display: none; 
+            }
+        }
+    }
+}
+
+ul,
+ol,
+dl,
+li {
+    list-style: none;
+}
+:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    color: $grayColor3;
+}
+button {
+    border: none;
+    background: none;
+    cursor:pointer;
+    padding:0;
+    &:disabled {
+		cursor: default;
+	}
+}
+i,
+cite,
+address {
+    font-style: normal;
+}
+em {
+    font-weight: 700;
+    font-style: normal;
+    color:$blueColor;
+}
+img {
+    margin: 0;
+    border: none;
+}
+iframe {
+    border: none;
+    outline: 0;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+fieldset legend {
+    @include hideElement;
+}
