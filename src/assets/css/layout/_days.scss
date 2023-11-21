@@ -33,4 +33,54 @@ article.todo {
             justify-content: flex-start;
         }
     }
+
+    div.todoList {
+        max-height: calc(100% - 10.8rem);
+        overflow: auto;
+        > div {
+            display: flex;
+            flex-direction: row;
+            padding: $gap;
+            gap: $gapSm;
+            border-bottom: 1px solid $grayColor3;
+            span {
+                &:first-child {
+                    flex: 1;
+                    > label,
+                    > label > input {
+                        width: 100%;
+                    }
+                    > input[type=checkbox]:checked {
+                        &+label > input[type=text] {
+                            text-decoration: line-through;
+                            text-decoration-color: $redColor;
+                            text-decoration-thickness: .2rem;
+                        }
+                    }
+                }
+                &:last-child {
+                    display: inline-flex;
+                    gap: $gapXsm;
+                    width: 18rem;
+                    > input {
+                        width: 100%;
+                    }
+                }
+            }
+            input[type=text] {
+                margin: 0;
+                padding: 0;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
+
+article.diary {
+    > textarea {
+        height: calc(100% - 4.6rem);
+        outline: none;
+        border: none;
+    }
 }
