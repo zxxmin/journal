@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body, nav, section, article, figure, figcaption,
+h1, h2, h3, h4, h5, h6,
+menu, ul, ol, dl, li, dt, dd,
+p, form {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: $black;
+    font-size: 1.6rem;
+}
+
+ul,
+ol,
+dl,
+li {
+    list-style: none;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    color: $black;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor:pointer;
+    padding:0;
+    &:disabled {
+		cursor: default;
+	}
+}
+
+.Container {
+    display: flex;
+    flex-direction: row;
+    width: 90rem;
+    margin: 0 auto;
+}

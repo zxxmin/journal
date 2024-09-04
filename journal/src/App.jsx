@@ -1,9 +1,15 @@
 import './App.css'
+import './assets/css/style.scss'
+import Button from './components/Button'
+import Nav from './components/Nav'
 
 function App() {
 
   return (
-    <>journal</>
+    <div className='Container'>
+      <Nav />
+      <Button text={'123'} />
+    </div>
   )
 }
 
