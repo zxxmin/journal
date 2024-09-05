@@ -1,6 +1,10 @@
+import { useParams } from "react-router-dom";
+
 const Tasks = () => {
+    const params = useParams();
+    
     return (
-        <div>Tasks</div>
+        <div>{params.id} Tasks</div>
     )
 }
 
