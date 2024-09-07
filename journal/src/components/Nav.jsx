@@ -1,7 +1,7 @@
 const Nav = () => {
     return (
         <section className="tasks">
-            <h2>TASKS</h2>
+            <h2 className="title">TASKS</h2>
 
             <ul>
                 <li className="year">

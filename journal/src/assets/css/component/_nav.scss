@@ -8,9 +8,9 @@ section.tasks {
     border-radius: $radiusLg;
     padding: $gapLg;
     
-    > h2 {
-        @include type('HdS');
-    }
+    // > h2 {
+    //     @include type('HdS');
+    // }
     
     > ul {
         max-height: calc(100% - 8.9rem);
