@@ -1,8 +1,14 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-lg);
+}
+
 .month-goal {
     height: 50%;
     > div {
         width: 100%;
-        height: 100%;
+        height: calc(100% - 5.6rem);
         display: flex;
         flex-direction: row;
         gap: var(--gap-lg);
@@ -29,5 +35,18 @@
                 overflow-y: auto;
             }
         }
+    }
+}
+
+.month-habit {
+    div.fnc-area {
+        margin-bottom: var(--gap-lg);
+        h1 {
+            margin-bottom: 0;
+        }
+    }
+    .habit-list {
+        width: 100%;
+        overflow-x: auto;
     }
 }

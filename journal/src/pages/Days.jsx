@@ -1,6 +1,10 @@
+import { useParams } from "react-router-dom";
+
 const Days = () => {
+    const { month } = useParams();
+
     return (
-        <div>Days</div>
+        <div>{month} Days</div>
     )
 }
 

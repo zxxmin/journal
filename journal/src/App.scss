@@ -38,7 +38,7 @@ button {
         align-items: center;
         gap:var(--gap-sm);
         > * {
-                margin-bottom: 0;
+            margin-bottom: 0;
         }
         &:only-child {
             flex:1;
@@ -57,8 +57,6 @@ button {
         align-items: flex-start;
     }
 }
-.tit-area,
-.fnc-area,
-.flex-area {
+.fnc-area {
     @extend %flexArea;
 }

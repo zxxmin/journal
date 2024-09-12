@@ -11,7 +11,7 @@ section.nav {
 ul {
     >li {
         input + label::before,
-        > ul li:nth-child(1) button::before  {
+        > ul li a.month::before  {
             content: '';
             display: inline-block;
             width: 2rem;
@@ -48,21 +48,19 @@ ul {
             display: none;
 
             li {
-                &:hover,
-                button.current {
+                a:hover,
+                a.current {
                     background-color: var(--color-gray02);
                     border-radius: var(--radius-md);
                     font-weight: 700;
                 }
-                &:nth-child(1) {
-                    button {
+                a {
+                    &.month {
                         padding-left: 2.8rem;
                         &::before {
                             background-image: url('../assets/month.svg');
                         }
                     }
-                }
-                button {
                     display: flex;
                     flex-direction: row;
                     gap: var(--gap-sm);

@@ -1,6 +1,11 @@
+import { useParams } from "react-router-dom";
+
 const Word = () => {
+    const { month } = useParams();
+    console.log(month)
+
     return (
-        <div>Word</div>
+        <div>{month} Word</div>
     )
 }
 
