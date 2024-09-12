@@ -1,0 +1,64 @@
+.title-lg {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 2.4rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.font-sm {
+    font-size: 1.4rem;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+select,
+textarea,
+button {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    vertical-align: middle;
+}
+
+%flexArea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-sm);
+    margin-bottom: var(--gap-md);
+
+   .l-area,
+   .r-area  {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap:var(--gap-sm);
+        > * {
+                margin-bottom: 0;
+        }
+        &:only-child {
+            flex:1;
+        }
+    }
+    .r-area  {
+        justify-content: flex-end;
+    }
+    &.center {
+		justify-content: center;
+	}
+	&.vcenter {
+		align-items: center;
+	}
+    .dir-col {
+        align-items: flex-start;
+    }
+}
+.tit-area,
+.fnc-area,
+.flex-area {
+    @extend %flexArea;
+}

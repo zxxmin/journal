@@ -1,0 +1,91 @@
+section.nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+    width: 24rem;
+    height: 100%;
+    background-color: var(--color-gray01);
+    border-radius: var(--radius-lg);
+    padding: var(--gap-lg);
+}
+ul {
+    >li {
+        input + label::before,
+        > ul li:nth-child(1) button::before  {
+            content: '';
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background-image: url('../assets/timeline.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        input {
+            position: absolute;
+            width: 0.1rem;
+            height: 0.1rem;
+            margin: -0.1rem;
+            overflow: hidden;
+            clip-path: polygon(0 0, 0 0, 0 0);
+    
+            &+label {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: var(--gap-sm);
+                padding: var(--gap-sm);
+                font-weight: 500;
+                cursor: pointer;
+            }
+    
+            &:checked ~ ul {
+                display: block;
+            }
+        }
+    
+        > ul {
+            display: none;
+
+            li {
+                &:hover,
+                button.current {
+                    background-color: var(--color-gray02);
+                    border-radius: var(--radius-md);
+                    font-weight: 700;
+                }
+                &:nth-child(1) {
+                    button {
+                        padding-left: 2.8rem;
+                        &::before {
+                            background-image: url('../assets/month.svg');
+                        }
+                    }
+                }
+                button {
+                    display: flex;
+                    flex-direction: row;
+                    gap: var(--gap-sm);
+                    align-items: center;
+                    width: 100%;
+                    padding: var(--gap-sm);
+                    padding-left: 5.6rem;
+                }
+            }
+            
+        }
+
+        
+
+    }
+    
+
+}
+
+
+.btn-cont {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-sm);
+    margin: auto auto 0;
+}

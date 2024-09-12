@@ -1,0 +1,99 @@
+:root {
+    --color-black: #444444;
+    --color-white: #FFFFFF;
+    --color-gray01: #F4F4F4;
+    --color-gray02: #EBEBEB;
+    --color-yellow: #FFD43B;
+    --color-blue: #45AAF2;
+    --color-red: #CD201F;
+    --gap-xlg: 3.2rem;
+    --gap-lg: 2.4rem;
+    --gap-md: 1.6rem;
+    --gap-sm: .8rem;
+    --gap-xsm: .4rem;
+    --radius-lg: 2.4rem;
+    --radius-md: .8rem;
+    --radius-sm: .4rem;
+}
+
+@mixin customScroll {
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        box-sizing: border-box;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+    }
+    &::-webkit-scrollbar-track {
+        width: 16px;
+        background-color: transparent;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body, nav, section, article, figure, figcaption,
+h1, h2, h3, h4, h5, h6,
+menu, ul, ol, dl, li, dt, dd,
+p, form {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: var(--color-black);
+    font-size: 1.6rem;
+    * {
+        @include customScroll();
+    }
+}
+
+ul,
+ol,
+dl,
+li {
+    list-style: none;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+button {
+    border: none;
+    background: none;
+    cursor:pointer;
+    padding:0;
+    &:disabled {
+		cursor: default;
+	}
+}
+
+.Container {
+    display: flex;
+    flex-direction: row;
+    width: 100rem;
+    height: 100vh;
+    margin: 0 auto;
+    padding: var(--gap-lg);
+    background-color: rgba(0, 0, 0, 0.1);
+    gap: var(--gap-lg);
+
+    .content {
+        padding: var(--gap-lg) 0;
+        flex: 1;
+    }
+}

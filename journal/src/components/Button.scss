@@ -1,0 +1,21 @@
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 9.2rem;
+    height: 3.6rem;
+    background-color: var(--color-white);
+    border: .1rem solid var(--color-black);
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+
+    &.POSITIVE {
+        background-color: var(--color-yellow);
+    }
+    
+    &.sm {
+        width: 5.6rem;
+        height: 3.2rem;
+        // border-radius: var(--radius-sm);
+    }
+}
