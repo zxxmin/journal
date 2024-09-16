@@ -3,9 +3,14 @@ import Nav from "../components/Nav";
 import Goals from "../components/Goals";
 import Button from '../components/Button';
 import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { JournalStateContext, JournalDispatchContext } from "../App";
 
 const Month = () => {
     const { month } = useParams();
+    const data = useContext(JournalStateContext)
+
+    console.log(data)
 
     const shotGoal = [
         "단기목표 1",
