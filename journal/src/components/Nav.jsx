@@ -1,7 +1,7 @@
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect, useContext } from 'react';
-import Button from "./Button"
 import './Nav.scss'
+import Button from "./Button"
+import { useState, useContext } from 'react';
+import { Link, useLocation } from "react-router-dom";
 import { JournalStateContext, JournalDispatchContext } from "../App";
 
 
@@ -10,10 +10,6 @@ const Nav = () => {
     const { onClickAdd } = useContext(JournalDispatchContext)
     const [checkedYear, setCheckedYear] = useState(null);
     const location = useLocation();
-    // const nav = useNavigate();
-
-
-
 
 
     const buttons = [
@@ -40,20 +36,20 @@ const Nav = () => {
                             {item.months.map(months => (
                                 <li key={months.month}>
                                     <Link
-                                        to={`/${months.month}`}
-                                        className={location.pathname === `/${months.month}` ? 'current month' : 'month'}
+                                        to={`/${item.year}_${months.month}`}
+                                        className={location.pathname === `/${item.year}_${months.month}` ? 'current month' : 'month'}
                                     >{months.month}
                                         월
                                     </Link>
                                     <Link
-                                        to={`/days/${months.month}`}
-                                        className={location.pathname === `/days/${months.month}` ? 'current' : ''}
+                                        to={`/days/${item.year}_${months.month}`}
+                                        className={location.pathname === `/days/${item.year}_${months.month}` ? 'current' : ''}
                                     >
                                         days
                                     </Link>
                                     <Link
-                                        to={`/word/${months.month}`}
-                                        className={location.pathname === `/word/${months.month}` ? 'current' : ''}
+                                        to={`/word/${item.year}_${months.month}`}
+                                        className={location.pathname === `/word/${item.year}_${months.month}` ? 'current' : ''}
                                     >
                                         word
                                     </Link>

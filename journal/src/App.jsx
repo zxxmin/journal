@@ -12,6 +12,15 @@ const init = [
     year: 2023,
     months: [
       {
+        month: 1,
+        goals: {
+          shortTerm: ["2023년 1월 단기목표"],
+          longTerm: ["2023년 1월 장기목표"],
+        },
+        habits: [],
+        days: []
+      },
+      {
         month: 11,
         goals: {
           shortTerm: ['한입으로 잘라먹는 리액트 책 읽기', '공부하기'],
@@ -136,8 +145,30 @@ const reducer = (state, action) => {
           ];
         }
       }
-    case 'CREATE_SHORT_GOAL': 
-      break;
+    case 'CREAT_GOALS': {
+      const {year, month, goalList, goals} = action.data;
+
+      return state.map(data => {
+          if(data.year === year) {
+            return {
+              ...data,
+              months: data.months.map(m => {
+                if(m.month === month) {
+                  return {
+                    ...m,
+                    goals: {
+                      ...m.goals,
+                      [goalList]: goals
+                    }
+                  }
+                }
+                return m
+              })
+            }
+          }
+          return data
+        })
+      }
     default :
       return state;
   }
@@ -157,23 +188,21 @@ function App() {
       item.months.map(monthData => monthData.month)
     );
 
-    console.log(currentMonth)
-    console.log(recentMonths)
-
     const defaultMonth = recentMonths.includes(currentMonth)
       ? currentMonth
       : recentMonths[recentMonths.length - 1]
 
-    nav(`/${defaultMonth}`, { replace: true });
+    const currentYear = now.getFullYear()
+    const recentYears = data.map(item => item.year)
+
+    const defaultYear = recentYears.includes(currentYear)
+      ? currentYear
+      : recentYears[recentYears.length - 1]
+
+    nav(`/${defaultYear}_${defaultMonth}`, { replace: true });
   }, [data])
 
 
-  const onClickbtn = (year, month, shortList) => {
-    dispatch({
-      type: 'CREATE_SHORT_GOAL',
-      data: { year, month, shortList }
-    });
-  };
 
   const onClickAdd = () => {
     const year = now.getFullYear();
@@ -185,15 +214,20 @@ function App() {
     });
   };
 
-  console.log(data)
+  const onClickGoalEdit = (year, month, goalList, goals) => {
+    dispatch({
+      type: 'CREAT_GOALS',
+      data: { year, month, goalList, goals}
+    })
+  }
 
   return (
     <>
     <JournalStateContext.Provider value={data}>
       <JournalDispatchContext.Provider
         value={{
-          dispatch,
           onClickAdd,
+          onClickGoalEdit
         }}
       >
         <div className="Container">

@@ -1,0 +1,57 @@
+.habit-list {
+    width: 100%;
+    overflow-x: auto;
+
+    table {
+        tbody {
+            th {
+                padding: .4rem 0;
+                text-align: left;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                word-wrap:normal;
+                width:100%;
+                overflow:hidden;
+
+                input[type=text] {
+                    width: 100%;
+                    font-weight: 400;
+                }
+            }
+
+            td {
+                label {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+
+                    input {
+                        position: absolute;
+                        width: 0.1rem;
+                        height: 0.1rem;
+                        margin: -0.1rem;
+                        overflow: hidden;
+                        clip-path: polygon(0 0, 0 0, 0 0);
+
+                        &:checked + span {
+                            background-color: var(--color-blue);
+                            border-color: var(--color-blue);
+                        }
+                        &:disabled + span {
+                            cursor: default;
+                        }
+                    }
+                    span {
+                        font-size: 0;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        border-radius: 50%;
+                        border: .1rem solid var(--color-black);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

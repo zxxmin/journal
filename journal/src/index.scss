@@ -32,6 +32,33 @@
     }
 }
 
+@mixin hideElement {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    margin: -0.1rem;
+    overflow: hidden;
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+@mixin ellipsis($line , $line-height:1.25) {
+	@if ($line == 1) {
+		text-overflow:ellipsis;
+		white-space:nowrap;
+		word-wrap:normal;
+		width:100%;
+		overflow:hidden;
+	} @else {
+		display: -webkit-box;
+		overflow: hidden;
+		line-height: $line-height;
+		width: 100%;
+		text-overflow: ellipsis;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $line;
+	}
+}
+
 * {
     box-sizing: border-box;
 }
@@ -79,6 +106,21 @@ button {
     padding:0;
     &:disabled {
 		cursor: default;
+	}
+}
+
+table {
+    width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+    table-layout: fixed;
+	text-align: center;
+	word-break: keep-all;
+    caption {
+        @include hideElement;
+    }
+    img { 
+		max-width: 100%;
 	}
 }
 

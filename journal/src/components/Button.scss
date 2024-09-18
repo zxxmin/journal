@@ -18,4 +18,11 @@
         height: 3.2rem;
         // border-radius: var(--radius-sm);
     }
+
+    &.circle {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        border: .1rem solid var(--color-black);
+    }
 }

@@ -1,4 +1,4 @@
-.content {
+.month-page {
     display: flex;
     flex-direction: column;
     gap: var(--gap-lg);
@@ -26,14 +26,6 @@
 
         > div {
             flex: 1;
-
-            .goal-list {
-                display: flex;
-                flex-direction: column;
-                gap: var(--gap-sm);
-                height: calc(100% - 4.1rem);
-                overflow-y: auto;
-            }
         }
     }
 }
@@ -44,9 +36,5 @@
         h1 {
             margin-bottom: 0;
         }
-    }
-    .habit-list {
-        width: 100%;
-        overflow-x: auto;
     }
 }

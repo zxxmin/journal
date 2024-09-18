@@ -1,0 +1,23 @@
+.goal-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sm);
+    height: calc(100% - 4.1rem);
+    overflow-y: auto;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-sm);
+
+        input[type=text] {
+            flex: 1;
+            height: 3.6rem;
+            border: .1rem solid var(--color-black);
+            border-radius: var(--radius-sm);
+            padding: var(--gap-sm) var(--gap-md);
+        }
+    }
+
+
+}
