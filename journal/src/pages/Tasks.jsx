@@ -38,7 +38,7 @@ const Tasks = () => {
     return (
         <section className="content task-sec">
             <div className="fnc-area">
-                <h1 className="l-area title-lg">{formatDay[1]+'일 '+formatDay[2]+'일'} Review</h1>
+                <h1 className="l-area title-lg">{formatDay[1]+'일 '+formatDay[2]+'일'} Notes/Review</h1>
                 <div className="r-area">
                     <Button
                         type={isEdit ? 'sm POSITIVE' : 'sm'}
