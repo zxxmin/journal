@@ -16,6 +16,11 @@
 - word cloud 라이브러리로 각 월마다 가장 많이 사용한 단어 추출
 
 ## 🛠️ 사용 기술
-- <img src="https://img.shields.io/badge/React-2a2f39?style=flat&logo=React&logoColor=61DAFB"/> : 컴포넌트 단위로 CRUD 기능을 쉽게 구현할 수 있고, 다양한 라이브러리를 사용하여 다양한 기능을 구현할 수 있어서 사용했습니다.
+- <img src="https://img.shields.io/badge/React-2a2f39?style=flat&logo=React&logoColor=61DAFB"/> : 컴포넌트 별로 CRUD 기능을 쉽게 구현할 수 있고 추가로 따로 관리할 수 있어서, 다양한 라이브러리를 사용하여 다양한 기능을 구현할 수 있어서 사용했습니다.
 
 - <img src="https://img.shields.io/badge/SASS-CC6699?style=flat&logo=SASS&logoColor=white"/> : 컴포넌트 단위로 scss 를 따로 사용하는 방법을 구상했습니다.
+
+## 🖥️ 작업 화면
+![image](https://github.com/user-attachments/assets/b53f6dda-56da-43f0-bed5-97bf90bf7edc)
+![image](https://github.com/user-attachments/assets/783ec130-a1d9-4e62-8dee-1805bc1db07a)
+![image](https://github.com/user-attachments/assets/62c7bf1f-d435-4bb3-933e-cddab21968e3)
