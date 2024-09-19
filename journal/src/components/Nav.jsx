@@ -8,7 +8,7 @@ import { JournalStateContext, JournalDispatchContext } from "../App";
 const Nav = () => {
     
     const data = useContext(JournalStateContext)
-    const { onClickAdd } = useContext(JournalDispatchContext)
+    const { onClickAdd, onClickDel } = useContext(JournalDispatchContext)
     const location = useLocation();
     const [checkedYears, setCheckedYears] = useState([]);
 
@@ -86,7 +86,7 @@ const Nav = () => {
                         key={i}
                         type={button.type === 'add' ? 'POSITIVE' : ''}
                         text={button.type}
-                        onClick={onClickAdd}
+                        onClick={button.type === 'add' ? onClickAdd : onClickDel}
                     />
                 ))}
             </div>

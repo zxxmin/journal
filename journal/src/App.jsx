@@ -300,6 +300,11 @@ function App() {
     });
   };
 
+  const onClickDel = () => {
+    alert('아직은 삭제할 수 없어요.')
+    return;
+  }
+
   const onClickGoalEdit = (year, month, goalList, goals) => {
     dispatch({
       type: 'CREATE_GOALS',
@@ -328,6 +333,7 @@ function App() {
       <JournalDispatchContext.Provider
         value={{
           onClickAdd,
+          onClickDel,
           onClickGoalEdit,
           onClickHabitEdit,
           onClickReviewEdit
