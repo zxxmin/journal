@@ -1,15 +1,35 @@
 import './Nav.scss'
 import Button from "./Button"
-import { useState, useContext } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { useState, useContext, useEffect } from 'react';
+import { Link, useLocation, useParams } from "react-router-dom";
 import { JournalStateContext, JournalDispatchContext } from "../App";
 
 
 const Nav = () => {
+    
     const data = useContext(JournalStateContext)
     const { onClickAdd } = useContext(JournalDispatchContext)
-    const [checkedYear, setCheckedYear] = useState(null);
     const location = useLocation();
+    const [checkedYears, setCheckedYears] = useState([]);
+
+    useEffect(() => {
+        const locationYear = parseInt(location.pathname.split('/')[1]?.split('_')[0], 10);
+        if (locationYear && !checkedYears.includes(locationYear)) {
+            setCheckedYears([locationYear]);
+        }
+    }, [location.pathname]);
+
+    const onCheckedYear = (year, isChecked) => {
+        setCheckedYears((prev) =>
+            isChecked
+                ? [...prev, year]
+                : prev.filter((item) => item !== year)
+        );
+    };
+
+    const onChangeYear = (e, year) => {
+        onCheckedYear(year, e.target.checked);
+    };
 
 
     const buttons = [
@@ -27,8 +47,8 @@ const Nav = () => {
                         <input
                             type="checkbox"
                             id={item.year}
-                            checked={checkedYear === item.year}
-                            onChange={() => setCheckedYear(item.year)}
+                            checked={checkedYears.includes(item.year)}
+                            onChange={(e) => onChangeYear(e, item.year)}
                         />
                         <label htmlFor={item.year}>{item.year}</label>
 

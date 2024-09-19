@@ -1,9 +1,9 @@
 import './Month.scss'
-import Goals from "../components/Goals";
-import Habit from '../components/Habit';
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { JournalStateContext, JournalDispatchContext } from "../App";
+import Goals from "../components/Goals";
+import Habit from '../components/Habit';
 
 const Month = () => {
     const { month } = useParams();

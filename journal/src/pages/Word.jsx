@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom";
+import './Word.scss'
 import { useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { JournalStateContext, JournalDispatchContext } from "../App";
 import * as d3 from 'd3';
 import cloud from 'd3-cloud';
-import './Word.scss'
-import { JournalStateContext, JournalDispatchContext } from "../App";
 
 const width = 400
 const height = 400

@@ -7,15 +7,20 @@
             th {
                 padding: .4rem 0;
                 text-align: left;
-                text-overflow:ellipsis;
-                white-space:nowrap;
-                word-wrap:normal;
-                width:100%;
-                overflow:hidden;
+                > span {
+                    display: inline-block;
+                    text-overflow:ellipsis;
+                    white-space:nowrap;
+                    word-wrap:normal;
+                    width:100%;
+                    overflow:hidden;
+                }
 
                 input[type=text] {
-                    width: 100%;
+                    width: calc(100% - 2.8rem);
                     font-weight: 400;
+                    vertical-align: middle;
+                    margin-left: .4rem
                 }
             }
 

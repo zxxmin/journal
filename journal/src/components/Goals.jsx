@@ -1,7 +1,7 @@
 import './Goals.scss'
-import Button from "./Button"
-import { JournalDispatchContext } from "../App";
 import { useContext, useEffect, useState } from "react";
+import { JournalDispatchContext } from "../App";
+import Button from "./Button"
 
 const Goals = ({data, yearToNum, monthToNum, subTit, goalList}) => {
     const getGoals = (goalType) => data
@@ -44,7 +44,7 @@ const Goals = ({data, yearToNum, monthToNum, subTit, goalList}) => {
     const onClickMinus = (i) => {
         const updatedGoals = editGoals.filter((_, index) => index !== i); // 해당 항목 삭제
         setEditGoals(updatedGoals);
-      };
+    };
 
     return (
         <div>
@@ -68,6 +68,7 @@ const Goals = ({data, yearToNum, monthToNum, subTit, goalList}) => {
                                     value={list || ""}
                                     onChange={(e) => onChangeInput(e, i)}
                                     title={list}
+                                    name={`goal_${i}`}
                                 />
                                 <Button 
                                     type={'circle'}
@@ -86,6 +87,7 @@ const Goals = ({data, yearToNum, monthToNum, subTit, goalList}) => {
                                     type="text"
                                     value={editGoals[0] || ""}
                                     onChange={(e) => onChangeInput(e, 0)}
+                                    name='goal'
                                 />
                                 <Button 
                                     type={'circle'}
