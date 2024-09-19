@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  base: '/journal/',
+  build: {
+    outDir: 'dist',
+  },
+  plugins: [react()], // React 플러그인 추가
+});
